@@ -1,0 +1,51 @@
+.weather-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+  
+  .weather-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 22px;
+  }
+  
+  .hourly-forecast,
+  .daily-forecast {
+    margin-top: 20px;
+  }
+  
+  .hourly-items,
+  .daily-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .hour-item,
+  .daily-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+  }
+  .chart-container {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hourly-forecast .chart-container h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
