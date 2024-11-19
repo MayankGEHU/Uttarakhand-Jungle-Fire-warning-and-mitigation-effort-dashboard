@@ -1,4 +1,3 @@
-// HourlyForecast.js
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -8,7 +7,6 @@ import {
   BarElement,
   Tooltip,
 } from 'chart.js';
-// import './HourlyForecast.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip);
 

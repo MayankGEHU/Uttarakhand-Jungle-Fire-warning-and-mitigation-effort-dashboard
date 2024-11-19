@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import Loader from './Loader'; 
+import Loader from './Loader';
 import 'leaflet/dist/leaflet.css';
 import './FireMap.css';
 import PropTypes from 'prop-types';
@@ -27,7 +27,7 @@ const setDefaultMarkerIcon = () => {
 };
 
 const FireMap = ({ initialEventData, center, zoom }) => {
-    const [eventData, setEventData] = useState(initialEventData || []); 
+    const [eventData, setEventData] = useState(initialEventData || []);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -37,9 +37,16 @@ const FireMap = ({ initialEventData, center, zoom }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://eonet.gsfc.nasa.gov/api/v2.1/events'); 
+                console.log('Fetching data from EONET API...');
+                const response = await fetch('https://eonet.gsfc.nasa.gov/api/v2.1/events');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status} (${response.statusText})`);
+                }
+
                 const data = await response.json();
-                setEventData(data.events || []); 
+                console.log('API Response:', data);
+                setEventData(data.events || []);
             } catch (error) {
                 console.error("Error fetching data:", error);
             } finally {
@@ -95,8 +102,8 @@ const FireMap = ({ initialEventData, center, zoom }) => {
 };
 
 FireMap.defaultProps = {
-    center: [30.3172, 78.0322], 
-    zoom: 12, 
+    center: [30.3172, 78.0322],
+    zoom: 12,
 };
 
 FireMap.propTypes = {
