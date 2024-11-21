@@ -2,7 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "../components/FireMap/NavBar";
 import FireMap from "../components/FireMap/FireMap";
-import WeatherDashboard from "../components/WeatherForecast/WeatherDashboard";
+// import WeatherDashboard from "../components/WeatherForecast/WeatherDashboard";
+import WeatherApp from "../components/Forcaset/WeatherApp";
 function Routing() {
   return (
     <Routes>
@@ -12,7 +13,7 @@ function Routing() {
           <>
             <Navbar />
             <FireMap />
-            <WeatherDashboard city="Uttarakhand" country="IN" />
+            <WeatherApp city="Uttarakhand" country="IN" />
           </>
         }
       />
